@@ -15,7 +15,7 @@ This is the validation accuracy during training process
 
 
 
-### Figure of accuracy
+### Structure of the ANN
 
 The ANN designed as 3 layers of neurons which they have 784, 256, 10 neurons, respectively. The first layer is input layer and it has 784 neurons. Those inputs are directly coming from inputs so there are no extra calculations in this neuron. The second layer has 256 neurons, and it is called as hidden layer. This layer takes inputs from first layer after processed with weights and biases. The last layer has 10 neurons, and it is called as output layer. This layer takes inputs from hidden layer after processed with weights and biases. Eventually there is a softmax function applied in last layer to decide which one has the highest probability as a result
 
@@ -31,3 +31,23 @@ can be considered as δj.ⴄmeans learning rate. This is a coefficient which sca
 
 δjis the error term and it is the error between desired output and given output from the neuron. This term is calculated differently if it belongs to an output layer or a hidden layer.
 
+*  **If δjis an output layer then** ![image](https://user-images.githubusercontent.com/41572446/122050384-b43b7d80-cde3-11eb-9b78-09fc994f1ddc.png)
+
+> tkmeans the target value for kthneuron in the layer
+> okmeans the output value for the kthneuron in the layer
+> f’(ok) means the derivative of activation function, so in this case it is f’(ok) = ok(1-ok)
+
+*  **If δjis a hidden layer then δj= f’(ok)** ![image](https://user-images.githubusercontent.com/41572446/122050820-290eb780-cde4-11eb-8715-9827f6349de3.png)
+
+> f’(ok) means the derivative of activation function, so in this case it is f’(ok) = ok(1-ok)
+> δk is the next layers neuron (eventually this is equal to an output neuron)
+> wkjis the kthneurons weight of the downstream layer
+
+Xjiis the input of that exact neuron
+
+### Percentage of correctness
+The accuracy of total dataset is calculated as 0.89 and the each classes accuracy is given as;
+
+![image](https://user-images.githubusercontent.com/41572446/122051439-e39eba00-cde4-11eb-9ad7-7a7e06ded3e8.png)
+
+ 
